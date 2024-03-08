@@ -1,4 +1,4 @@
-# Manage-Apartment
+Tóm tắt dự án
 IDE(Intergrated Developer Enviroment): eclipse 
 • Enviroment: JDK (17) 
 • Hello world 
