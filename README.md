@@ -1,5 +1,4 @@
 # Manage-Apartment
-# Manage-Apartment
 IDE(Intergrated Developer Enviroment): eclipse 
 • Enviroment: JDK (17) 
 • Hello world 
