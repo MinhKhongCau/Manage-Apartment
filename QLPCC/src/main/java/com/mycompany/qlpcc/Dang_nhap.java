@@ -36,8 +36,9 @@ public class Dang_nhap extends javax.swing.JFrame {
         Label_Dangnhap = new javax.swing.JLabel();
         Label_Matkhau = new javax.swing.JLabel();
         TextField_Tendangnhap = new javax.swing.JTextField();
-        TextField_Matkhau = new javax.swing.JTextField();
         Button_Dangnhap = new javax.swing.JButton();
+        PasswordField_Matkhau = new javax.swing.JPasswordField();
+        ToggleButton_Hienthi = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,16 +55,28 @@ public class Dang_nhap extends javax.swing.JFrame {
             }
         });
 
-        TextField_Matkhau.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextField_MatkhauActionPerformed(evt);
-            }
-        });
-
         Button_Dangnhap.setText("Đăng nhập");
         Button_Dangnhap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_DangnhapActionPerformed(evt);
+            }
+        });
+
+        PasswordField_Matkhau.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PasswordField_MatkhauActionPerformed(evt);
+            }
+        });
+
+        ToggleButton_Hienthi.setText("Hiển thị");
+        ToggleButton_Hienthi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ToggleButton_HienthiMouseClicked(evt);
+            }
+        });
+        ToggleButton_Hienthi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ToggleButton_HienthiActionPerformed(evt);
             }
         });
 
@@ -72,28 +85,28 @@ public class Dang_nhap extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Label_Tendangnhap)
+                    .addComponent(Label_Matkhau))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Label_Dangnhap)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Label_Tendangnhap)
-                            .addComponent(Label_Matkhau))
+                        .addGap(11, 11, 11)
+                        .addComponent(Button_Dangnhap))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(TextField_Tendangnhap)
+                            .addComponent(PasswordField_Matkhau, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TextField_Matkhau, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TextField_Tendangnhap, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(129, 129, 129)
-                        .addComponent(Label_Dangnhap))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addComponent(Button_Dangnhap)))
-                .addContainerGap(72, Short.MAX_VALUE))
+                        .addComponent(ToggleButton_Hienthi, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(41, 41, 41)
                 .addComponent(Label_Dangnhap)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -102,10 +115,11 @@ public class Dang_nhap extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Label_Matkhau)
-                    .addComponent(TextField_Matkhau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47)
+                    .addComponent(PasswordField_Matkhau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ToggleButton_Hienthi))
+                .addGap(35, 35, 35)
                 .addComponent(Button_Dangnhap)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         pack();
@@ -114,7 +128,7 @@ public class Dang_nhap extends javax.swing.JFrame {
     private void Button_DangnhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_DangnhapActionPerformed
         // TODO add your handling code here:
         String user = TextField_Tendangnhap.getText();
-        String password = TextField_Matkhau.getText();
+        String password = PasswordField_Matkhau.getText();
         Connection ketnoi = KetNoiDB.KetNoi();
         if(user.isEmpty() || password.isEmpty()){
             JOptionPane.showMessageDialog(this, "Nhap du thong tin");
@@ -122,12 +136,25 @@ public class Dang_nhap extends javax.swing.JFrame {
         else{
             try {
             Statement ps = ketnoi.createStatement();
-            String sql = "select * from DANG_NHAP where ten_dang_nhap='%s'";
-            sql = String.format(sql, user);
+            String sql = "select * from DANG_NHAP where ten_dang_nhap='%s' and mat_khau='%s'";
+            sql = String.format(sql, user, password);
             ResultSet rs = ps.executeQuery(sql);
-            System.out.println(rs.getString("ma_quyen"));
-            rs.close();
-            ketnoi.close();
+            if(!rs.next())
+               JOptionPane.showMessageDialog(this, "Ten dang nhap hoac mat khau khong dung");
+            else{
+                String quyen = "";
+                while(rs.next()){
+                    quyen = rs.getString("ma_quyen");
+                }
+                rs.close();
+                ketnoi.close();
+                quyen.trim();
+                System.out.println(quyen.equals("NV"));
+               if(quyen.equalsIgnoreCase("NV")){
+                    new Nhan_vien().setVisible(true);
+                    setVisible(false);
+               }
+            }
             } catch (SQLException e) {
                 e.printStackTrace();
                 JOptionPane.showMessageDialog(this, "Loi ket noi");
@@ -139,9 +166,23 @@ public class Dang_nhap extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TextField_TendangnhapActionPerformed
 
-    private void TextField_MatkhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextField_MatkhauActionPerformed
+    private void PasswordField_MatkhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordField_MatkhauActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextField_MatkhauActionPerformed
+    }//GEN-LAST:event_PasswordField_MatkhauActionPerformed
+
+    private void ToggleButton_HienthiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToggleButton_HienthiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ToggleButton_HienthiActionPerformed
+
+    private void ToggleButton_HienthiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ToggleButton_HienthiMouseClicked
+        // TODO add your handling code here:
+        if(ToggleButton_Hienthi.isSelected()){
+            PasswordField_Matkhau.setEchoChar((char)0);
+        }
+        else{
+            PasswordField_Matkhau.setEchoChar('*');
+        }
+    }//GEN-LAST:event_ToggleButton_HienthiMouseClicked
 
     /**
      * @param args the command line arguments
@@ -183,7 +224,8 @@ public class Dang_nhap extends javax.swing.JFrame {
     private javax.swing.JLabel Label_Dangnhap;
     private javax.swing.JLabel Label_Matkhau;
     private javax.swing.JLabel Label_Tendangnhap;
-    private javax.swing.JTextField TextField_Matkhau;
+    private javax.swing.JPasswordField PasswordField_Matkhau;
     private javax.swing.JTextField TextField_Tendangnhap;
+    private javax.swing.JToggleButton ToggleButton_Hienthi;
     // End of variables declaration//GEN-END:variables
 }

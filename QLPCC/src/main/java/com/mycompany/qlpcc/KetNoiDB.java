@@ -23,6 +23,8 @@ public class KetNoiDB {
             ketnoi = DriverManager.getConnection(uRL, userName, password);
             System.out.println("Ket noi thanh cong");
             
+            
+            
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
             System.out.println("Ket noi that bai");
