@@ -148,12 +148,12 @@ public class Dang_nhap extends javax.swing.JFrame {
                 }
                 rs.close();
                 ketnoi.close();
-                quyen.trim();
-                System.out.println(quyen.equals("NV"));
-               if(quyen.equalsIgnoreCase("NV")){
+//                quyen.trim();
+//                System.out.println(quyen.equals("NV"));
+//               if(quyen.equalsIgnoreCase("NV")){
                     new Nhan_vien().setVisible(true);
                     setVisible(false);
-               }
+               //}
             }
             } catch (SQLException e) {
                 e.printStackTrace();
