@@ -127,33 +127,39 @@ public class Dang_nhap extends javax.swing.JFrame {
 
     private void Button_DangnhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_DangnhapActionPerformed
         // TODO add your handling code here:
-        String user = TextField_Tendangnhap.getText();
-        String password = PasswordField_Matkhau.getText();
+        String user = TextField_Tendangnhap.getText().trim();
+        String password = PasswordField_Matkhau.getText().trim();
         Connection ketnoi = KetNoiDB.KetNoi();
         if(user.isEmpty() || password.isEmpty()){
             JOptionPane.showMessageDialog(this, "Nhap du thong tin");
         }
         else{
             try {
-            Statement ps = ketnoi.createStatement();
+            Statement st = ketnoi.createStatement();
             String sql = "select * from DANG_NHAP where ten_dang_nhap='%s' and mat_khau='%s'";
             sql = String.format(sql, user, password);
-            ResultSet rs = ps.executeQuery(sql);
+            ResultSet rs = st.executeQuery(sql);
             if(!rs.next())
                JOptionPane.showMessageDialog(this, "Ten dang nhap hoac mat khau khong dung");
             else{
+                
                 String quyen = "";
-                while(rs.next()){
-                    quyen = rs.getString("ma_quyen");
+               
+                quyen = rs.getString("ma_quyen");
+                    
+                quyen = quyen.trim();
+                
+                if(quyen.equals("NV")){
+                    //System.out.println(user);
+                    new Nhan_vien(user).setVisible(true);
+                    setVisible(false);
+                }
+                else if(quyen.equals("CSH")){
+                    new Chu_so_huu().setVisible(true);
+                    setVisible(false);
                 }
                 rs.close();
                 ketnoi.close();
-//                quyen.trim();
-//                System.out.println(quyen.equals("NV"));
-//               if(quyen.equalsIgnoreCase("NV")){
-                    new Nhan_vien().setVisible(true);
-                    setVisible(false);
-               //}
             }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -215,6 +221,7 @@ public class Dang_nhap extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Dang_nhap().setVisible(true);
+                
             }
         });
     }
