@@ -1,8 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.mycompany.qlpcc;
+
+import QuyCoding.QuyCoding.*;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -19,7 +17,7 @@ import java.util.List;
  * @author Admin
  */
 public class Nhan_vien extends javax.swing.JFrame {
-
+    Connection ketnoi = KetNoiDB.KetNoi();
     /**
      * Creates new form Nhan_vien
      */
@@ -91,8 +89,6 @@ public class Nhan_vien extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         ComboBox_Canho = new javax.swing.JComboBox<>();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
         Button_Dangxuat = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -487,32 +483,6 @@ public class Nhan_vien extends javax.swing.JFrame {
 
         panel_dichvu.addTab("Thống kê", Panel_Thongke);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 808, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 443, Short.MAX_VALUE)
-        );
-
-        panel_dichvu.addTab("Thông tin căn hộ", jPanel1);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 808, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 443, Short.MAX_VALUE)
-        );
-
-        panel_dichvu.addTab("Dịch vụ", jPanel2);
-
         Button_Dangxuat.setText("Đăng xuất");
         Button_Dangxuat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -564,7 +534,7 @@ public class Nhan_vien extends javax.swing.JFrame {
     private void Panel_ThongtinAncestorMoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_Panel_ThongtinAncestorMoved
         // TODO add your handling code here:
         Label_hientendangnhap.setText(ma_nhan_vien);
-        Connection ketnoi = KetNoiDB.KetNoi();
+        //Connection ketnoi = KetNoiDB.KetNoi();
         try {
             Statement st = ketnoi.createStatement();
             String sql = "select * from NHAN_VIEN where ten_dang_nhap='%s'";
@@ -598,7 +568,7 @@ public class Nhan_vien extends javax.swing.JFrame {
             }
             
             rs.close();
-            ketnoi.close();
+            //ketnoi.close();
         } catch (SQLException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Loi ket noi");
@@ -607,7 +577,7 @@ public class Nhan_vien extends javax.swing.JFrame {
 
     private void SuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuaActionPerformed
         // TODO add your handling code here:
-        Connection ketnoi = KetNoiDB.KetNoi();
+        //Connection ketnoi = KetNoiDB.KetNoi();
         try {
             Statement st = ketnoi.createStatement();
             String ten_dang_nhap = TextField_Tendangnhap.getText();
@@ -640,7 +610,7 @@ public class Nhan_vien extends javax.swing.JFrame {
                in_csh();
                
                st.close();
-               ketnoi.close();
+               //ketnoi.close();
             }
             
         } catch (SQLException e) {
@@ -661,7 +631,7 @@ public class Nhan_vien extends javax.swing.JFrame {
 
     private void Table_ChusohuuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Table_ChusohuuMouseClicked
         // TODO add your handling code here:
-       Connection ketnoi = KetNoiDB.KetNoi();
+       //Connection ketnoi = KetNoiDB.KetNoi();
        
         try {
             int row = -1;
@@ -686,7 +656,7 @@ public class Nhan_vien extends javax.swing.JFrame {
                 if(rs.next()){
                     mat_khau = rs.getString("mat_khau").trim();
                     rs.close();
-                    ketnoi.close();
+                    //ketnoi.close();
                 }
                 
                 TextField_Tendangnhap.setText(ten_dang_nhap);
@@ -737,7 +707,7 @@ public class Nhan_vien extends javax.swing.JFrame {
         if(ten_dang_nhap.isEmpty() || ma_chu_so_huu.isEmpty() || ho_ten.isEmpty() || sdt.isEmpty() || phai.isEmpty() || ngay_sinh.isEmpty() || cccd.isEmpty() || mat_khau.isEmpty())
             JOptionPane.showMessageDialog(this, "Nhap du thong tin");
         else{
-            Connection ketnoi = KetNoiDB.KetNoi();
+            //Connection ketnoi = KetNoiDB.KetNoi();
             try {
                
                 Statement st = ketnoi.createStatement();
@@ -759,7 +729,7 @@ public class Nhan_vien extends javax.swing.JFrame {
                 TextField_Tendangnhap.setEditable(false);
                 in_csh();
                 st.close();
-                ketnoi.close();
+                //ketnoi.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -832,7 +802,7 @@ public class Nhan_vien extends javax.swing.JFrame {
     private void XoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XoaActionPerformed
         // TODO add your handling code here:
         
-        Connection ketnoi = KetNoiDB.KetNoi();
+        //Connection ketnoi = KetNoiDB.KetNoi();
         try {
             Statement st = ketnoi.createStatement();
             String ma_chu_so_huu = TextField_Machusohuu.getText();
@@ -859,7 +829,7 @@ public class Nhan_vien extends javax.swing.JFrame {
             in_csh(); 
            
             st.close();
-            ketnoi.close();
+            //ketnoi.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -872,7 +842,7 @@ public class Nhan_vien extends javax.swing.JFrame {
 
     private void Panel_ThongkeAncestorMoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_Panel_ThongkeAncestorMoved
         // TODO add your handling code here:
-        Connection ketnoi = KetNoiDB.KetNoi();
+        //Connection ketnoi = KetNoiDB.KetNoi();
         try {
             Statement st = ketnoi.createStatement();
             Vector can_ho = null;
@@ -903,7 +873,7 @@ public class Nhan_vien extends javax.swing.JFrame {
             }
             
             st.close();
-            ketnoi.close();
+            //ketnoi.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -995,15 +965,13 @@ public class Nhan_vien extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup_Phai;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane panel_dichvu;
     // End of variables declaration//GEN-END:variables
     
     public void in_csh(){
-        Connection ketnoi = KetNoiDB.KetNoi();
+        //Connection ketnoi = KetNoiDB.KetNoi();
         DefaultTableModel table = (DefaultTableModel) Table_Chusohuu.getModel();
         table.setRowCount(0);
         try {
@@ -1027,7 +995,7 @@ public class Nhan_vien extends javax.swing.JFrame {
                 table.addRow(v);
             }
             st.close();
-            ketnoi.close();
+            //ketnoi.close();
         } catch (SQLException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Loi ket noi");

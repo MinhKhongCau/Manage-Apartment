@@ -1,8 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package com.mycompany.qlpcc;
+
+import UI.*;
+import QuyCoding.QuyCoding.*;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -152,10 +152,12 @@ public class Dang_nhap extends javax.swing.JFrame {
                 if(quyen.equals("NV")){
                     //System.out.println(user);
                     new Nhan_vien(user).setVisible(true);
+                    QuyCoding.QuyCoding.Nhan_vien.run_Quy();
                     setVisible(false);
                 }
                 else if(quyen.equals("CSH")){
-                    new Chu_so_huu().setVisible(true);
+                    new CHU_SO_HUU().setVisible(true);
+                    
                     setVisible(false);
                 }
                 rs.close();
