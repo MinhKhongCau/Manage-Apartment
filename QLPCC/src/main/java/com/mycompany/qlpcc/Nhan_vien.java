@@ -38,9 +38,6 @@ public class Nhan_vien extends javax.swing.JFrame {
     private void initComponents() {
 
         TabbedPane_Nhanvien = new javax.swing.JTabbedPane();
-        panel_canho = new javax.swing.JPanel();
-        ScrollPane_canho = new javax.swing.JScrollPane();
-        table_canho = new javax.swing.JTable();
         Panel_Thongtin = new javax.swing.JPanel();
         Label_manhanvien = new javax.swing.JLabel();
         Label_hoten = new javax.swing.JLabel();
@@ -56,16 +53,15 @@ public class Nhan_vien extends javax.swing.JFrame {
         Label_hienngaysinh = new javax.swing.JLabel();
         Label_hienphai = new javax.swing.JLabel();
         Label_hienphongban = new javax.swing.JLabel();
+        Panel_quanlytaikhoan = new javax.swing.JPanel();
+        Panel_Thongke = new javax.swing.JPanel();
+        panel_canho = new javax.swing.JPanel();
+        ScrollPane_canho = new javax.swing.JScrollPane();
+        table_canho = new javax.swing.JTable();
         panel_dichvu = new javax.swing.JPanel();
         ScrollPane_dichvu = new javax.swing.JScrollPane();
         table_dichvu = new javax.swing.JTable();
         TabbedPane_hieuchinhdv = new javax.swing.JTabbedPane();
-        panel_xoadv = new javax.swing.JPanel();
-        label_madv_xoa = new javax.swing.JLabel();
-        text_madv_xoa = new javax.swing.JTextField();
-        button_xoadv = new javax.swing.JButton();
-        label_tendv_xoa = new javax.swing.JLabel();
-        ComboBox_tendv_xoa = new javax.swing.JComboBox<>();
         panel_themsuadv = new javax.swing.JPanel();
         label_tendv = new javax.swing.JLabel();
         label_dongia = new javax.swing.JLabel();
@@ -77,40 +73,17 @@ public class Nhan_vien extends javax.swing.JFrame {
         text_donvi = new javax.swing.JTextField();
         button_themdv = new javax.swing.JButton();
         button_suadv = new javax.swing.JButton();
+        panel_xoadv = new javax.swing.JPanel();
+        label_madv_xoa = new javax.swing.JLabel();
+        text_madv_xoa = new javax.swing.JTextField();
+        button_xoadv = new javax.swing.JButton();
+        label_tendv_xoa = new javax.swing.JLabel();
+        ComboBox_tendv_xoa = new javax.swing.JComboBox<>();
         Button_Dangxuat = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         TabbedPane_Nhanvien.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-
-        table_canho.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "Mã căn hộ", "Diện tích", "Mã chủ sở hữu", "Chủ sở hữu", "Khu", "Tầng"
-            }
-        ));
-        ScrollPane_canho.setViewportView(table_canho);
-
-        javax.swing.GroupLayout panel_canhoLayout = new javax.swing.GroupLayout(panel_canho);
-        panel_canho.setLayout(panel_canhoLayout);
-        panel_canhoLayout.setHorizontalGroup(
-            panel_canhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ScrollPane_canho, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
-        );
-        panel_canhoLayout.setVerticalGroup(
-            panel_canhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_canhoLayout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addComponent(ScrollPane_canho, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        TabbedPane_Nhanvien.addTab("Thòng tin căn hộ", panel_canho);
 
         Label_manhanvien.setText("Mã nhân viên");
 
@@ -151,7 +124,7 @@ public class Nhan_vien extends javax.swing.JFrame {
                             .addComponent(Label_hienngaysinh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Label_hienphai, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
                             .addComponent(Label_hienphongban, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(291, Short.MAX_VALUE))
+                .addContainerGap(411, Short.MAX_VALUE))
         );
         Panel_ThongtinLayout.setVerticalGroup(
             Panel_ThongtinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,6 +162,61 @@ public class Nhan_vien extends javax.swing.JFrame {
 
         TabbedPane_Nhanvien.addTab("Thông tin", Panel_Thongtin);
 
+        javax.swing.GroupLayout Panel_quanlytaikhoanLayout = new javax.swing.GroupLayout(Panel_quanlytaikhoan);
+        Panel_quanlytaikhoan.setLayout(Panel_quanlytaikhoanLayout);
+        Panel_quanlytaikhoanLayout.setHorizontalGroup(
+            Panel_quanlytaikhoanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 820, Short.MAX_VALUE)
+        );
+        Panel_quanlytaikhoanLayout.setVerticalGroup(
+            Panel_quanlytaikhoanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 304, Short.MAX_VALUE)
+        );
+
+        TabbedPane_Nhanvien.addTab("Quản lý tài khoản", Panel_quanlytaikhoan);
+
+        javax.swing.GroupLayout Panel_ThongkeLayout = new javax.swing.GroupLayout(Panel_Thongke);
+        Panel_Thongke.setLayout(Panel_ThongkeLayout);
+        Panel_ThongkeLayout.setHorizontalGroup(
+            Panel_ThongkeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 820, Short.MAX_VALUE)
+        );
+        Panel_ThongkeLayout.setVerticalGroup(
+            Panel_ThongkeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 304, Short.MAX_VALUE)
+        );
+
+        TabbedPane_Nhanvien.addTab("Thông kê", Panel_Thongke);
+
+        table_canho.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Mã căn hộ", "Diện tích", "Mã chủ sở hữu", "Chủ sở hữu", "Khu", "Tầng"
+            }
+        ));
+        ScrollPane_canho.setViewportView(table_canho);
+
+        javax.swing.GroupLayout panel_canhoLayout = new javax.swing.GroupLayout(panel_canho);
+        panel_canho.setLayout(panel_canhoLayout);
+        panel_canhoLayout.setHorizontalGroup(
+            panel_canhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ScrollPane_canho, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
+        );
+        panel_canhoLayout.setVerticalGroup(
+            panel_canhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_canhoLayout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addComponent(ScrollPane_canho, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        TabbedPane_Nhanvien.addTab("Thòng tin căn hộ", panel_canho);
+
         table_dichvu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -212,55 +240,6 @@ public class Nhan_vien extends javax.swing.JFrame {
             }
         });
         ScrollPane_dichvu.setViewportView(table_dichvu);
-
-        label_madv_xoa.setText("Mã dịch vụ");
-
-        button_xoadv.setText("Xóa");
-        button_xoadv.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button_xoadvActionPerformed(evt);
-            }
-        });
-
-        label_tendv_xoa.setText("Tên dịch vụ");
-
-        javax.swing.GroupLayout panel_xoadvLayout = new javax.swing.GroupLayout(panel_xoadv);
-        panel_xoadv.setLayout(panel_xoadvLayout);
-        panel_xoadvLayout.setHorizontalGroup(
-            panel_xoadvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_xoadvLayout.createSequentialGroup()
-                .addGroup(panel_xoadvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel_xoadvLayout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addComponent(button_xoadv))
-                    .addGroup(panel_xoadvLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(panel_xoadvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(label_madv_xoa)
-                            .addComponent(label_tendv_xoa, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(panel_xoadvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(text_madv_xoa, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                            .addComponent(ComboBox_tendv_xoa, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(29, Short.MAX_VALUE))
-        );
-        panel_xoadvLayout.setVerticalGroup(
-            panel_xoadvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_xoadvLayout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addGroup(panel_xoadvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(text_madv_xoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_madv_xoa))
-                .addGap(18, 18, 18)
-                .addGroup(panel_xoadvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_tendv_xoa)
-                    .addComponent(ComboBox_tendv_xoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                .addComponent(button_xoadv)
-                .addGap(26, 26, 26))
-        );
-
-        TabbedPane_hieuchinhdv.addTab("Xóa", panel_xoadv);
 
         label_tendv.setText("Tên dịch vụ");
 
@@ -356,6 +335,55 @@ public class Nhan_vien extends javax.swing.JFrame {
 
         TabbedPane_hieuchinhdv.addTab("Thêm/Sửa", panel_themsuadv);
 
+        label_madv_xoa.setText("Mã dịch vụ");
+
+        button_xoadv.setText("Xóa");
+        button_xoadv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_xoadvActionPerformed(evt);
+            }
+        });
+
+        label_tendv_xoa.setText("Tên dịch vụ");
+
+        javax.swing.GroupLayout panel_xoadvLayout = new javax.swing.GroupLayout(panel_xoadv);
+        panel_xoadv.setLayout(panel_xoadvLayout);
+        panel_xoadvLayout.setHorizontalGroup(
+            panel_xoadvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_xoadvLayout.createSequentialGroup()
+                .addGroup(panel_xoadvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel_xoadvLayout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addComponent(button_xoadv))
+                    .addGroup(panel_xoadvLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(panel_xoadvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(label_madv_xoa)
+                            .addComponent(label_tendv_xoa, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(panel_xoadvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(text_madv_xoa, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                            .addComponent(ComboBox_tendv_xoa, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+        panel_xoadvLayout.setVerticalGroup(
+            panel_xoadvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_xoadvLayout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addGroup(panel_xoadvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(text_madv_xoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_madv_xoa))
+                .addGap(18, 18, 18)
+                .addGroup(panel_xoadvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_tendv_xoa)
+                    .addComponent(ComboBox_tendv_xoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addComponent(button_xoadv)
+                .addGap(26, 26, 26))
+        );
+
+        TabbedPane_hieuchinhdv.addTab("Xóa", panel_xoadv);
+
         javax.swing.GroupLayout panel_dichvuLayout = new javax.swing.GroupLayout(panel_dichvu);
         panel_dichvu.setLayout(panel_dichvuLayout);
         panel_dichvuLayout.setHorizontalGroup(
@@ -364,7 +392,7 @@ public class Nhan_vien extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(TabbedPane_hieuchinhdv, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ScrollPane_dichvu, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
+                .addComponent(ScrollPane_dichvu, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE)
                 .addContainerGap())
         );
         panel_dichvuLayout.setVerticalGroup(
@@ -394,16 +422,16 @@ public class Nhan_vien extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Button_Dangxuat)
-                .addGap(39, 39, 39))
+                .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(24, 24, 24)
                 .addComponent(Button_Dangxuat)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TabbedPane_Nhanvien, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(133, Short.MAX_VALUE))
         );
 
         pack();
@@ -635,7 +663,9 @@ public class Nhan_vien extends javax.swing.JFrame {
     private javax.swing.JLabel Label_phai;
     private javax.swing.JLabel Label_phongban;
     private javax.swing.JLabel Label_sdt;
+    private javax.swing.JPanel Panel_Thongke;
     private javax.swing.JPanel Panel_Thongtin;
+    private javax.swing.JPanel Panel_quanlytaikhoan;
     private javax.swing.JScrollPane ScrollPane_canho;
     private javax.swing.JScrollPane ScrollPane_dichvu;
     private javax.swing.JTabbedPane TabbedPane_Nhanvien;
