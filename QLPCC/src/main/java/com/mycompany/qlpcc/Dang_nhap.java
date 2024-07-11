@@ -4,6 +4,7 @@
  */
 package com.mycompany.qlpcc;
 
+import QuyCoding.Nhan_vien;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;

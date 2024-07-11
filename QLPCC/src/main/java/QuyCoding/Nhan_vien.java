@@ -2,8 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.qlpcc;
+package QuyCoding;
 import com.mycompany.qlpcc.Dang_nhap;
+import com.mycompany.qlpcc.Dang_nhap;
+import com.mycompany.qlpcc.KetNoiDB;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -38,23 +40,6 @@ public class Nhan_vien extends javax.swing.JFrame {
     private void initComponents() {
 
         TabbedPane_Nhanvien = new javax.swing.JTabbedPane();
-        Panel_Thongtin = new javax.swing.JPanel();
-        Label_manhanvien = new javax.swing.JLabel();
-        Label_hoten = new javax.swing.JLabel();
-        Label_sdt = new javax.swing.JLabel();
-        Label_cccd = new javax.swing.JLabel();
-        Label_ngaysinh = new javax.swing.JLabel();
-        Label_phai = new javax.swing.JLabel();
-        Label_phongban = new javax.swing.JLabel();
-        Label_hienmanhanvien = new javax.swing.JLabel();
-        Label_hienhoten = new javax.swing.JLabel();
-        Label_hiensdt = new javax.swing.JLabel();
-        Label_hiencccd = new javax.swing.JLabel();
-        Label_hienngaysinh = new javax.swing.JLabel();
-        Label_hienphai = new javax.swing.JLabel();
-        Label_hienphongban = new javax.swing.JLabel();
-        Panel_quanlytaikhoan = new javax.swing.JPanel();
-        Panel_Thongke = new javax.swing.JPanel();
         panel_canho = new javax.swing.JPanel();
         ScrollPane_canho = new javax.swing.JScrollPane();
         table_canho = new javax.swing.JTable();
@@ -84,109 +69,6 @@ public class Nhan_vien extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         TabbedPane_Nhanvien.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-
-        Label_manhanvien.setText("Mã nhân viên");
-
-        Label_hoten.setText("Họ và tên");
-
-        Label_sdt.setText("SĐT");
-
-        Label_cccd.setText("CCCD");
-
-        Label_ngaysinh.setText("Ngày sinh");
-
-        Label_phai.setText("Phái");
-
-        Label_phongban.setText("Phòng ban");
-
-        javax.swing.GroupLayout Panel_ThongtinLayout = new javax.swing.GroupLayout(Panel_Thongtin);
-        Panel_Thongtin.setLayout(Panel_ThongtinLayout);
-        Panel_ThongtinLayout.setHorizontalGroup(
-            Panel_ThongtinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Panel_ThongtinLayout.createSequentialGroup()
-                .addGap(128, 128, 128)
-                .addGroup(Panel_ThongtinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Label_phongban, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(Panel_ThongtinLayout.createSequentialGroup()
-                        .addGroup(Panel_ThongtinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Label_phai, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Label_cccd, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Label_sdt, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Label_hoten)
-                            .addComponent(Label_manhanvien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Label_ngaysinh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(31, 31, 31)
-                        .addGroup(Panel_ThongtinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Label_hienmanhanvien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Label_hienhoten, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Label_hiensdt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Label_hiencccd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Label_hienngaysinh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Label_hienphai, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                            .addComponent(Label_hienphongban, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(411, Short.MAX_VALUE))
-        );
-        Panel_ThongtinLayout.setVerticalGroup(
-            Panel_ThongtinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Panel_ThongtinLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(Panel_ThongtinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_manhanvien)
-                    .addComponent(Label_hienmanhanvien))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Panel_ThongtinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_hoten)
-                    .addComponent(Label_hienhoten))
-                .addGap(12, 12, 12)
-                .addGroup(Panel_ThongtinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_sdt)
-                    .addComponent(Label_hiensdt))
-                .addGap(12, 12, 12)
-                .addGroup(Panel_ThongtinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_cccd)
-                    .addComponent(Label_hiencccd))
-                .addGap(12, 12, 12)
-                .addGroup(Panel_ThongtinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_ngaysinh)
-                    .addComponent(Label_hienngaysinh))
-                .addGap(12, 12, 12)
-                .addGroup(Panel_ThongtinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Label_hienphai)
-                    .addComponent(Label_phai))
-                .addGap(12, 12, 12)
-                .addComponent(Label_phongban)
-                .addGap(12, 12, 12)
-                .addComponent(Label_hienphongban)
-                .addContainerGap(86, Short.MAX_VALUE))
-        );
-
-        TabbedPane_Nhanvien.addTab("Thông tin", Panel_Thongtin);
-
-        javax.swing.GroupLayout Panel_quanlytaikhoanLayout = new javax.swing.GroupLayout(Panel_quanlytaikhoan);
-        Panel_quanlytaikhoan.setLayout(Panel_quanlytaikhoanLayout);
-        Panel_quanlytaikhoanLayout.setHorizontalGroup(
-            Panel_quanlytaikhoanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 820, Short.MAX_VALUE)
-        );
-        Panel_quanlytaikhoanLayout.setVerticalGroup(
-            Panel_quanlytaikhoanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 304, Short.MAX_VALUE)
-        );
-
-        TabbedPane_Nhanvien.addTab("Quản lý tài khoản", Panel_quanlytaikhoan);
-
-        javax.swing.GroupLayout Panel_ThongkeLayout = new javax.swing.GroupLayout(Panel_Thongke);
-        Panel_Thongke.setLayout(Panel_ThongkeLayout);
-        Panel_ThongkeLayout.setHorizontalGroup(
-            Panel_ThongkeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 820, Short.MAX_VALUE)
-        );
-        Panel_ThongkeLayout.setVerticalGroup(
-            Panel_ThongkeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 304, Short.MAX_VALUE)
-        );
-
-        TabbedPane_Nhanvien.addTab("Thông kê", Panel_Thongke);
 
         table_canho.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -443,6 +325,52 @@ public class Nhan_vien extends javax.swing.JFrame {
         new Dang_nhap().setVisible(true);
     }//GEN-LAST:event_Button_DangxuatActionPerformed
 
+    private void button_xoadvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_xoadvActionPerformed
+
+        Connection ketNoi = KetNoiDB.KetNoi();
+
+        String ma_dv;
+        ma_dv = text_madv_xoa.getText();
+
+        if (ma_dv.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Hay nhap ma dich vu!");
+        }
+        else {
+            try {
+                //PreparedStatement ps = ketNoi.prepareStatement(sql);
+                //ResultSet rs = ps.executeQuery();
+                Statement ps = ketNoi.createStatement();
+
+                String sql = "DELETE FROM DICH_VU WHERE ma_dich_vu ='%s';";
+                sql = String.format(sql, ma_dv);
+                ps.executeUpdate(sql);
+
+                DefaultTableModel dtm = (DefaultTableModel) table_dichvu.getModel();
+                dtm.setRowCount(0);
+
+                layDichVu();
+                ComboBox_tendv_xoa.removeAllItems();
+                layDataComboBox();
+
+                JOptionPane.showMessageDialog(this, "Xoa thanh cong!");
+
+                text_madv_xoa.setText("");
+                ComboBox_tendv_xoa.setSelectedIndex(-1);
+                text_tendv.setText("");
+                text_vat.setText("");
+                text_dongia.setText("");
+                text_donvi.setText("");
+
+                ps.close();
+                ketNoi.close();
+            }
+            catch (SQLException ex) {
+                ex.printStackTrace();
+                System.out.println("Loi khi doc du lieu");
+            }
+        }
+    }//GEN-LAST:event_button_xoadvActionPerformed
+
     private void button_suadvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_suadvActionPerformed
 
         Connection ketNoi = KetNoiDB.KetNoi();
@@ -552,52 +480,6 @@ public class Nhan_vien extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_text_tendvActionPerformed
 
-    private void button_xoadvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_xoadvActionPerformed
-
-        Connection ketNoi = KetNoiDB.KetNoi();
-
-        String ma_dv;
-        ma_dv = text_madv_xoa.getText();
-
-        if (ma_dv.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Hay nhap ma dich vu!");
-        }
-        else {
-            try {
-                //PreparedStatement ps = ketNoi.prepareStatement(sql);
-                //ResultSet rs = ps.executeQuery();
-                Statement ps = ketNoi.createStatement();
-
-                String sql = "DELETE FROM DICH_VU WHERE ma_dich_vu ='%s';";
-                sql = String.format(sql, ma_dv);
-                ps.executeUpdate(sql);
-
-                DefaultTableModel dtm = (DefaultTableModel) table_dichvu.getModel();
-                dtm.setRowCount(0);
-
-                layDichVu();
-                ComboBox_tendv_xoa.removeAllItems();
-                layDataComboBox();
-
-                JOptionPane.showMessageDialog(this, "Xoa thanh cong!");
-
-                text_madv_xoa.setText("");
-                ComboBox_tendv_xoa.setSelectedIndex(-1);
-                text_tendv.setText("");
-                text_vat.setText("");
-                text_dongia.setText("");
-                text_donvi.setText("");
-
-                ps.close();
-                ketNoi.close();
-            }
-            catch (SQLException ex) {
-                ex.printStackTrace();
-                System.out.println("Loi khi doc du lieu");
-            }
-        }
-    }//GEN-LAST:event_button_xoadvActionPerformed
-
     private void table_dichvuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_dichvuMouseClicked
         DefaultTableModel dtm = (DefaultTableModel) table_dichvu.getModel();
 
@@ -649,23 +531,6 @@ public class Nhan_vien extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Button_Dangxuat;
     private javax.swing.JComboBox<String> ComboBox_tendv_xoa;
-    private javax.swing.JLabel Label_cccd;
-    private javax.swing.JLabel Label_hiencccd;
-    private javax.swing.JLabel Label_hienhoten;
-    private javax.swing.JLabel Label_hienmanhanvien;
-    private javax.swing.JLabel Label_hienngaysinh;
-    private javax.swing.JLabel Label_hienphai;
-    private javax.swing.JLabel Label_hienphongban;
-    private javax.swing.JLabel Label_hiensdt;
-    private javax.swing.JLabel Label_hoten;
-    private javax.swing.JLabel Label_manhanvien;
-    private javax.swing.JLabel Label_ngaysinh;
-    private javax.swing.JLabel Label_phai;
-    private javax.swing.JLabel Label_phongban;
-    private javax.swing.JLabel Label_sdt;
-    private javax.swing.JPanel Panel_Thongke;
-    private javax.swing.JPanel Panel_Thongtin;
-    private javax.swing.JPanel Panel_quanlytaikhoan;
     private javax.swing.JScrollPane ScrollPane_canho;
     private javax.swing.JScrollPane ScrollPane_dichvu;
     private javax.swing.JTabbedPane TabbedPane_Nhanvien;
