@@ -15,7 +15,7 @@ import java.sql.SQLException;
 public class KetNoiDB {
     public static Connection KetNoi(){
         Connection ketnoi = null;
-        String uRL = "jdbc:sqlserver://localhost:1433;databaseName=nckh; encrypt = true; trustServerCertificate = true;";
+        String uRL = "jdbc:sqlserver://LAPTOP-17FFLB61:1433;databaseName=nckh;encrypt=true;trustServerCertificate=true";
         String userName = "sa";
         String password = "12345";
         try {
